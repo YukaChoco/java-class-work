@@ -14,7 +14,6 @@ public class MyPanel extends JPanel {
 		super();
 		this.shapeList = new ArrayList<>();
 
-		// Step1. to be changed
 		MouseAdapter myml = new MyMouseListener(this);
 		this.addMouseListener(myml);
 	}
@@ -35,7 +34,10 @@ public class MyPanel extends JPanel {
 	}
 
 	public void panelClicked(int x, int y) {
-		// Step 2. insert here
+		for (Shape se : this.shapeList) {
+			if (se != null)
+				se.selectByClick(x, y);
+		}
 		this.repaint();
 	}
 }

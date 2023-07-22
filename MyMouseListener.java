@@ -15,6 +15,6 @@ public class MyMouseListener extends MouseAdapter {
 		int x = e.getX();
 		int y = e.getY();
 		System.out.println("Clicked at ("+x+","+y+")");
-		// Step2. insert here
+		this.panel.panelClicked(x, y);
 		}
 	}
