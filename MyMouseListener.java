@@ -12,8 +12,8 @@ public class MyMouseListener extends MouseAdapter {
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		int x = 0; // Step1. to be changed
-		int y = 0; // Step1. to be changed
+		int x = e.getX();
+		int y = e.getY();
 		System.out.println("Clicked at ("+x+","+y+")");
 		// Step2. insert here
 		}

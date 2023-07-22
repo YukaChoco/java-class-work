@@ -1,3 +1,4 @@
+
 // OOP6-A
 // MyPanel
 import java.awt.*;
@@ -8,32 +9,33 @@ import java.awt.event.*;
 
 public class MyPanel extends JPanel {
 	private List<Shape> shapeList;
-	
+
 	public MyPanel() {
 		super();
 		this.shapeList = new ArrayList<>();
 
 		// Step1. to be changed
-//		MouseAdapter myml = new MyMouseListener(  );
-//		    .addMouseListener(   );
-		}
+		MouseAdapter myml = new MyMouseListener(this);
+		this.addMouseListener(myml);
+	}
 
 	public void addShape(Shape s) {
 		this.shapeList.add(s);
 		this.repaint();
-		}
+	}
 
 	@Override
-	public void paintComponent(Graphics g){
+	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		System.out.println("MyPanel painting ...");	
+		System.out.println("MyPanel painting ...");
 		for (Shape se : this.shapeList) {
-			if (se != null) se.draw(g);
-			}
+			if (se != null)
+				se.draw(g);
 		}
-	
+	}
+
 	public void panelClicked(int x, int y) {
 		// Step 2. insert here
 		this.repaint();
-		}
 	}
+}
