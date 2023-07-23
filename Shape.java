@@ -32,4 +32,12 @@ public abstract class Shape implements Drawable, Selectable {
 	public void selectByClick(int x, int y) {
 		this.selected = contains(x, y);
 	}
+
+	public boolean moveSelected(int dx, int dy) {
+		if (this.selected) {
+			this.move(dx, dy);
+			return true;
+		}
+		return false;
+	}
 }
