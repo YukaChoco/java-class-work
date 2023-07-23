@@ -21,8 +21,8 @@ public abstract class Shape implements Drawable, Selectable {
 	public void draw(Graphics g) {
 		System.out.println("Drawing... " + this.toString() + " selected = " + this.selected);
 		Graphics2D g2 = (Graphics2D) g;
-		float strokeWidth = 1;
-		Color col = Color.BLACK;
+		float strokeWidth = (this.selected ? 2 : 1);
+		Color col = (this.selected ? Color.RED : Color.BLACK);
 		g2.setStroke(new BasicStroke(strokeWidth));
 		g.setColor(col);
 	}
