@@ -40,4 +40,11 @@ public abstract class Shape implements Drawable, Selectable {
 		}
 		return false;
 	}
+
+	public double calcSelectedShapeArea() {
+		if (this.selected) {
+			return this.getArea();
+		}
+		return 0;
+	}
 }
